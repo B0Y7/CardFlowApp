@@ -28,4 +28,13 @@ public class NfcAccessCard : BaseCard
     public override decimal CalculateUnitProcessingCost() => AntennaTuningCost + EncryptionKeyFee;
 
     public override string GetCardTypeDisplayName() => "Thẻ NFC 13.56MHz";
+
+
+    public override void UpdatePricing(decimal newBlankCost, decimal newSellingPrice)
+    {
+        base.UpdatePricing(newBlankCost, newSellingPrice);
+        CreatedAt = DateTime.UtcNow;
+        UnitBlankCost = newBlankCost;
+
+    }
 }

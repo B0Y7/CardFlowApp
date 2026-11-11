@@ -18,6 +18,7 @@ public static class DependencyInjection
         registry.Register(new ProximityRfidCardDefinition());
         registry.Register(new VipSmartChipCardDefinition());
         registry.Register(new NfcAccessCardDefinition());
+        registry.Register(new DiamondCardDefinition());
         services.AddSingleton<ICardTypeRegistry>(registry);
 
         // 2. Logic nghiệp vụ & tính toán tài chính

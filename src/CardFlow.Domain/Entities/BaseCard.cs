@@ -9,7 +9,7 @@ public abstract class BaseCard : IFinancialEvaluator
     public Guid Id { get; }
     public string CardCode { get; protected set; }
     public string HolderName { get; protected set; }
-    public DateTime CreatedAt { get; }
+    public DateTime CreatedAt { get; protected set; }
 
     // Chi phí phôi thẻ nhập về (đầu vào)
     public decimal UnitBlankCost { get; protected set; }

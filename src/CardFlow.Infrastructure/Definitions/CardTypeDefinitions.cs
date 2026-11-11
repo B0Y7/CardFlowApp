@@ -88,3 +88,23 @@ public class NfcAccessCardDefinition : ICardTypeDefinition
         );
     }
 }
+
+// 5. Thẻ Kim Cương Cao Cấp (Diamond Card) - Minh chứng cho nguyên lý OCP
+public class DiamondCardDefinition : ICardTypeDefinition
+{
+    public string TypeKey => "DIAMOND_VIP";
+    public string DisplayName => "Thẻ Kim Cương Cao Cấp (Diamond)";
+    public string Description => "Thẻ VIP nạm đá quý, viền mạ vàng cao cấp, gia công laser tinh xảo.";
+    public decimal DefaultBlankCost => 50000m;
+    public decimal DefaultSellingPrice => 200000m;
+
+    public BaseCard CreateCard(string cardCode, string holderName, decimal? customBlankCost = null, decimal? customSellingPrice = null)
+    {
+        return new DiamondCard(
+            cardCode,
+            holderName,
+            customBlankCost ?? DefaultBlankCost,
+            customSellingPrice ?? DefaultSellingPrice
+        );
+    }
+}
